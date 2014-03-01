@@ -29,23 +29,24 @@ First of all, import AFSpritzManager.h to your class
 
 Add a method that will change the words
 
-```-(void)updateLabelWithDelay:(NSTimeInterval)seconds {
-   [[AFSpritzTimer sharedTimerManager]changeWordWithDelay:seconds target:self selector:@selector(toggleSpritz)];
-}
+    -(void)updateLabelWithDelay:(NSTimeInterval)seconds {
+       [[AFSpritzTimer sharedTimerManager]changeWordWithDelay:seconds target:self selector:@selector(toggleSpritz)];
+    }
 
 
 Then, add a method that will handle the change of words
 
-```-(void)toggleSpritz {
-   AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war!\n Oh, what you want, what you need What'd you come here for? Well, an eye for an eye and an 'f' for fight Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
-       NSLog(@"Reading complete");
-   }];
+    -(void)toggleSpritz {
+        AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war!\n Oh, what you want, what you need What'd you come here for? Well, an eye for an eye and an 'f' for fight Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
+            NSLog(@"Reading complete");
+        }];
 
-   if (next) {
-       _label.word = next;
-       [self updateLabelWithDelay:next.delay];
-   }
-}
+        if (next) {
+            _label.word = next;
+            [self updateLabelWithDelay:next.delay];
+        }
+    }
+
 When the readding is finished, the block will be called.
 
 To start the readding, just call the method we added at the first step by adding this line
