@@ -19,6 +19,9 @@
     [super viewWillAppear:animated];
     
     [self updateLabelWithDelay:0.1];
+    
+    _label.textColor = [UIColor blackColor];
+    _label.markingLinesColor = [UIColor blackColor];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -27,7 +30,7 @@
 }
 
 -(void)toggleSpritz {
-    AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war!\n Oh, what you want, what you need What'd you come here for? Well, an eye for an eye and an 'f' for fight Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
+    AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war! Oh, what you want, what you need, what'd you come here for? Well, an eye for an eye and an 'f' for fight. Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
         NSLog(@"Reading complete");
     }];
     

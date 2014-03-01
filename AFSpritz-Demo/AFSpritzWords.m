@@ -28,7 +28,7 @@
         return minimum;
     if (length > maxTreshold)
         return maximum;
-    return minimum + (maximum - minimum)/(maxTreshold - minTreshold);
+    return minimum + ((maximum - minimum)/(maxTreshold - minTreshold));
 }
 
 -(NSUInteger)getReaderMarkerPosition {
