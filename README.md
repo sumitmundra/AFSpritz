@@ -1,7 +1,7 @@
 AFSpritz
 =======================
 
-A complete Spritz SDK for iOS
+A complete Spritz SDK for iOS. Spritz is a brand new revolutionary reading method, that will help you out to improve your number of words per minute (wpm). You can find the Spritz project at [spritzinc.com](http://spritzinc.com).
 
 ![alt text](https://raw.github.com/AlvaroFranco/AFSpritz/master/example.gif "Example")
 
@@ -54,7 +54,6 @@ To start the readding, just call the method we added at the first step by adding
 
     [self updateLabelWithDelay:0.1];
 
-You can change the speed by replacing the delay.
 If you want to stop it before it finishes, call the stopTimer method of AFSpritzTimer
 
     [[AFSpritzTimer sharedTimerManager]stopTimer];
