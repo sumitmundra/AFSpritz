@@ -22,6 +22,7 @@
     
     _label.textColor = [UIColor blackColor];
     _label.markingLinesColor = [UIColor blackColor];
+    _label.textFont = [UIFont boldSystemFontOfSize:20];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -30,7 +31,7 @@
 }
 
 -(void)toggleSpritz {
-    AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war! Oh, what you want, what you need, what'd you come here for? Well, an eye for an eye and an 'f' for fight. Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
+    AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Welcome to AFSpritz! Spritz is a brand new revolutionary reading method that will help you to improve your number of words per minute. Take a look at AFSpritz!"]nextWordWithCompletion:^(BOOL success) {
         NSLog(@"Reading complete");
     }];
     
