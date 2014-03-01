@@ -9,7 +9,7 @@ A complete Spritz SDK for iOS. Spritz is a brand new revolutionary reading metho
 
 AFSpritz is on [CocoaPods](http://cocoapods.org), so you can get the pod by adding this line to your Podfile
 
-    pod 'AFSpritz', '~> 1.0'
+    pod 'AFSpritz', '~> 1.1'
 
 If not, just import these files to your project:
 
