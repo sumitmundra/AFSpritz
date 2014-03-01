@@ -52,7 +52,7 @@ typedef enum {
     _markingLinesColor = [UIColor whiteColor];
     _textColor = [UIColor whiteColor];
     _textFont = [UIFont systemFontOfSize:20];
-    _word = [[AFSpritzWords alloc] initWithNextWord:@"test"];
+    _word = [[AFSpritzWords alloc] initWithNextWord:@" "];
     
     self.layer.cornerRadius = 10;
     self.layer.masksToBounds = YES;

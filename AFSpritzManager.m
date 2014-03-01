@@ -24,7 +24,7 @@
 
     dispatch_once(&once, ^{
         sharedManager = [self new];
-        sharedManager.text = text;
+        sharedManager.text = [[[text stringByReplacingOccurrencesOfString:@". " withString:@". (fullstop) "] stringByReplacingOccurrencesOfString:@"! " withString:@"! (fullstop) "] stringByReplacingOccurrencesOfString:@"? " withString:@"? (fullstop) "];
     });
     
     return sharedManager;
@@ -52,6 +52,12 @@
     if (_current != _words.count) {
         if (!self.text)
             return nil;
+        
+        if (_current >= 1) {
+            if ([[_words objectAtIndex:_current - 1]isEqualToString:@"(fullstop)"]) {
+                sleep(1.5);
+            }
+        }
 
         NSString *next = nil;
         do {
@@ -59,7 +65,14 @@
             ++_current;
             
         } while (!next.length);
+        
+        if ([next isEqualToString:@"(fullstop)"]) {
+            next = @" ";
+            sleep(0.8);
+        }
+        
         return [[AFSpritzWords alloc] initWithNextWord:next];
+        
     } else {
         completion(YES);
         return nil;
