@@ -3,7 +3,7 @@ AFSpritz
 
 A complete Spritz SDK for iOS
 
-![alt text](https://raw.github.com/AlvaroFranco/Xcode-Theme-DarkColored/master/example.gif "Example")
+![alt text](https://raw.github.com/AlvaroFranco/AFSpritz/master/example.gif "Example")
 
 ##CocoaPods
 
@@ -66,4 +66,4 @@ You can also customize the label with the following properties:
 
 ##Author
 
-Done by Álvaro Franco
+Done by Alvaro Franco
