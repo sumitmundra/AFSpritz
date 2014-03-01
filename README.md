@@ -13,14 +13,14 @@ AFSpritz is on [CocoaPods](http://cocoapods.org), so you can get the pod by addi
 
 If not, just import these files to your project:
 
-```AFSpritzManager.h
-```AFSpritzManager.m
-```AFSpritzWords.h
-```AFSpritzWords.m
-```AFSpritzTimer.h
-```AFSpritzTimer.m
-```AFSpritzLabel.h
-```AFSpritzLabel.m
+    AFSpritzManager.h
+    AFSpritzManager.m
+    AFSpritzWords.h
+    AFSpritzWords.m
+    AFSpritzTimer.h
+    AFSpritzTimer.m
+    AFSpritzLabel.h
+    AFSpritzLabel.m
 
 ##Usage
 
