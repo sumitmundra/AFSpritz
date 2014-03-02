@@ -38,7 +38,7 @@ Add a method that will change the words
 Then, add a method that will handle the change of words
 
     -(void)toggleSpritz {
-        AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Rise above, gonna start the war!\n Oh, what you want, what you need What'd you come here for? Well, an eye for an eye and an 'f' for fight Taking me down as the prisoners riot"]nextWordWithCompletion:^(BOOL success) {
+        AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Spritz is a brand new revolutionary reading method, that will help you out to improve your number of words per minute. Take a look at AFSpritz!"]nextWordWithCompletion:^(BOOL success) {
             NSLog(@"Reading complete");
         }];
 
@@ -48,9 +48,9 @@ Then, add a method that will handle the change of words
         }
     }
 
-When the readding is finished, the block will be called.
+When the reading is finished, the block will be called.
 
-To start the readding, just call the method we added at the first step by adding this line
+To start the reading, just call the method we added at the first step by adding this line
 
     [self updateLabelWithDelay:0.1];
 
@@ -67,4 +67,4 @@ You can also customize the label with the following properties:
 
 ##Author
 
-Done by Alvaro Franco
+Made by Alvaro Franco. If you have any question, feel free to drop me a line at [alvarofrancoayala@gmail.com](mailto:alvarofrancoayala@gmail.com)
