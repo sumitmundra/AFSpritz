@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AFSpritz"
-  s.version      = "1.0"
+  s.version      = "1.2"
   s.summary      = "A complete Spritz SDK for iOS"
 
   s.description  = "AFSpritz is a great SDK for Spritz, a brand new revolutionary reading method"
@@ -15,10 +15,9 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/AlvaroFranco/AFSpritz.git", :tag => 'v1.0' }
+  s.source       = { :git => "https://github.com/AlvaroFranco/AFSpritz.git", :tag => 'v1.2' }
 
-  s.source_files  = 'AFSpritzManager.h','AFSpritzManager.m','AFSpritzWords.h','AFSpritzWords.m','AFSpritzTimer.h','AFSpritzTimer.m','AFSpritzLabel.h','AFSpritzLabel.m'
-
+  s.source_files  = 'AFSpritzManager.h','AFSpritzManager.m','AFSpritzWords.h','AFSpritzWords.m','NSTimer+Blocks.h','NSTimer+Blocks.m','AFSpritzLabel.h','AFSpritzLabel.m'
 
   s.framework  = 'CoreText'
 
