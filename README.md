@@ -1,7 +1,7 @@
 AFSpritz
 =======================
 
-A complete Spritz SDK for iOS. Spritz is a brand new revolutionary reading method, that will help you out to improve your number of words per minute (wpm). You can find the Spritz project at [spritzinc.com](http://spritzinc.com).
+A complete Spritz SDK for iOS
 
 ![alt text](https://raw.github.com/AlvaroFranco/AFSpritz/master/example.gif "Example")
 
@@ -9,7 +9,7 @@ A complete Spritz SDK for iOS. Spritz is a brand new revolutionary reading metho
 
 AFSpritz is on [CocoaPods](http://cocoapods.org), so you can get the pod by adding this line to your Podfile
 
-    pod 'AFSpritz', '~> 1.1'
+    pod 'AFSpritz', '~> 1.2'
 
 If not, just import these files to your project:
 
@@ -17,10 +17,10 @@ If not, just import these files to your project:
     AFSpritzManager.m
     AFSpritzWords.h
     AFSpritzWords.m
-    AFSpritzTimer.h
-    AFSpritzTimer.m
     AFSpritzLabel.h
     AFSpritzLabel.m
+    NSTimer+Blocks.h
+    NSTimer+Blocks.m
 
 ##Usage
 
@@ -28,42 +28,43 @@ First of all, import AFSpritzManager.h to your class
 
     #import "AFSpritzManager.h"
 
-Add a method that will change the words
+Initialise AFSpritzManager assigning a text and a number of words per minute, that will determine the speed of the reading. Theorically, there's no limit, but the more confortable speed is 200-250 words per minute. However, Spritz is made for let you read more than 500 words per minute.
 
-    -(void)updateLabelWithDelay:(NSTimeInterval)seconds {
-       [[AFSpritzTimer sharedTimerManager]changeWordWithDelay:seconds target:self selector:@selector(toggleSpritz)];
-    }
+    AFSpritzManager *manager = [[AFSpritzManager alloc]initWithText:@"Welcome to AFSpritz! Spritz is a brand new revolutionary reading method that will help you to improve your number of words per minute. Take a look at AFSpritz!" andWordsPerMinute:250];
 
+Then, call the block that will update the Spritz label
 
-Then, add a method that will handle the change of words
-
-    -(void)toggleSpritz {
-        AFSpritzWords *next = [[AFSpritzManager sharedManagerWithText:@"Spritz is a brand new revolutionary reading method, that will help you out to improve your number of words per minute. Take a look at AFSpritz!"]nextWordWithCompletion:^(BOOL success) {
-            NSLog(@"Reading complete");
-        }];
-
-        if (next) {
-            _label.word = next;
-            [self updateLabelWithDelay:next.delay];
+    [manager updateLabelWithNewWordAndCompletion:^(AFSpritzWords *word, BOOL finished) {
+       
+        if (!finished) {
+            
+			//Update the AFSpritzLabel
+			
+        } else {
+            NSLog(@"Finished!");
         }
-    }
+    }];
+    
+##AFSpritzLabel API
 
-When the reading is finished, the block will be called.
+AFSpritzLabel is an incredible, well crafted and 100% AFSpritzWords-compatible UIView subclass that will let you show your Spritz reading.
 
-To start the reading, just call the method we added at the first step by adding this line
+You can customize many properties from AFSpritzLabel, such as:
 
-    [self updateLabelWithDelay:0.1];
+| Property | Class | Required | Default | Description |
+|----------|-------|----------|---------|-------------|
+| word | AFSpritzWords | Yes | nil | Determines the AFSpritzWords-subclassed word to show. |
+| markerColor | UIColor | No | Red | Determines the color of the letter you're supposed to be focused on. |
+| markeringLinesColor | UIColor | No | Black | Determines the color of the lines around the word. |
+| textColor | UIColor | No | Black | Determines the color of the text. |
+| textFont | UIFont | No | System font with size 20 | Determines the font of the text. |
+| backgroundColor | UIColor | No | White | Determines the color of the background. |
 
-If you want to stop it before it finishes, call the stopTimer method of AFSpritzTimer
+##Wishlist
 
-    [[AFSpritzTimer sharedTimerManager]stopTimer];
+1. ~~Customize speed throught the number of words per minute.~~
 
-You can also customize the label with the following properties:
-
-    markerColor
-    markingLinesColor
-    textColor
-    textFont
+2. Add a little stop when there's a stop on the text (. … : , ! ?).
 
 ##Author
 
