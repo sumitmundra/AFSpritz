@@ -49,13 +49,15 @@ typedef enum {
     markerLength = 5.0f;
     textVerticalPosition = 15;
     _markerColor = [UIColor redColor];
-    _markingLinesColor = [UIColor whiteColor];
-    _textColor = [UIColor whiteColor];
+    _markingLinesColor = [UIColor blackColor];
+    _background = [UIColor whiteColor];
+    _textColor = [UIColor blackColor];
     _textFont = [UIFont systemFontOfSize:20];
-    _word = [[AFSpritzWords alloc] initWithNextWord:@" "];
+    _word = [[AFSpritzWords alloc] initWithNextWord:@"test"];
     
     self.layer.cornerRadius = 10;
     self.layer.masksToBounds = YES;
+    self.backgroundColor = _background;
 }
 
 -(void)setWord:(AFSpritzWords *)word {

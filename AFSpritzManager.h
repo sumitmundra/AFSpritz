@@ -8,17 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "AFSpritzWords.h"
-#import "AFSpritzTimer.h"
 #import "AFSpritzLabel.h"
+#import "NSTimer+Blocks.h"
 
 @interface AFSpritzManager : NSObject
 
-typedef void (^statusBlock)(BOOL success);
+typedef void (^statusBlock)(AFSpritzWords *word, BOOL finished);
 
-+(instancetype)sharedManagerWithText:(NSString *)text;
-
--(AFSpritzWords *)nextWordWithCompletion:(statusBlock)completion;
+-(id)initWithText:(NSString *)text andWordsPerMinute:(int)wpm;
 
 @property (nonatomic, strong) NSString *text;
+
+-(NSMutableArray *)packageOfWords;
+-(void)updateLabelWithNewWordAndCompletion:(statusBlock)completion;
+
+-(void)stopTimer;
 
 @end

@@ -14,6 +14,7 @@
 @property (nonatomic, retain) AFSpritzWords *word;
 @property (nonatomic, retain) UIColor *markerColor;
 @property (nonatomic, retain) UIColor *markingLinesColor;
+@property (nonatomic, retain) UIColor *background;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIFont *textFont;
 
