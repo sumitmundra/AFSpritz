@@ -10,6 +10,7 @@
 #import "AFSpritzWords.h"
 #import "AFSpritzLabel.h"
 #import "NSTimer+Blocks.h"
+#import "NSTimer+Control.h"
 
 typedef NS_ENUM(int, AFSpritzStatus) {
     AFSpritzStatusStopped,
@@ -35,5 +36,12 @@ typedef void (^statusBlock)(AFSpritzWords *word, BOOL finished);
 
 // Checks for the Spritz status
 -(BOOL)status:(AFSpritzStatus)spritzStatus;
+
+// Pauses the reading
+// It will save the state if the class doesn't get deallocated
+-(void)pauseReading;
+
+// Resumes the reading if it has been previously paused
+-(void)resumeReading;
 
 @end

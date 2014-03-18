@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class AFSpritzLabel;
-
 @interface ViewController : UIViewController
 
 @end

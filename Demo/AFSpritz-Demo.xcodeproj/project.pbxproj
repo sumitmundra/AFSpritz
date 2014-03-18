@@ -26,6 +26,9 @@
 		A77AC1B018C2360C006368E7 /* AFSpritz_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A77AC1AF18C2360C006368E7 /* AFSpritz_DemoTests.m */; };
 		A77AC1BB18C2363E006368E7 /* AFSpritzManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A77AC1BA18C2363E006368E7 /* AFSpritzManager.m */; };
 		A77AC1BF18C2365E006368E7 /* AFSpritzWords.m in Sources */ = {isa = PBXBuildFile; fileRef = A77AC1BE18C2365E006368E7 /* AFSpritzWords.m */; };
+		A7ACFEB818D8EB3400218D68 /* NSTimer+Control.m in Sources */ = {isa = PBXBuildFile; fileRef = A7ACFEB718D8EB3400218D68 /* NSTimer+Control.m */; };
+		A7B29D8118D8F16300811500 /* SpritzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B29D8018D8F16300811500 /* SpritzViewController.m */; };
+		D07A573853A1447E9DDF9AC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF1E28854945BD97712B7C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121B0F5E08E04C188CF1F26A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		53DF1E28854945BD97712B7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75590CD18C23BFF003D7763 /* AFSpritzLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSpritzLabel.h; sourceTree = "<group>"; };
 		A75590CE18C23BFF003D7763 /* AFSpritzLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSpritzLabel.m; sourceTree = "<group>"; };
 		A75590D018C23CF5003D7763 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -67,6 +72,10 @@
 		A77AC1BA18C2363E006368E7 /* AFSpritzManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSpritzManager.m; sourceTree = "<group>"; };
 		A77AC1BD18C2365E006368E7 /* AFSpritzWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSpritzWords.h; sourceTree = "<group>"; };
 		A77AC1BE18C2365E006368E7 /* AFSpritzWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSpritzWords.m; sourceTree = "<group>"; };
+		A7ACFEB618D8EB3400218D68 /* NSTimer+Control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Control.h"; sourceTree = "<group>"; };
+		A7ACFEB718D8EB3400218D68 /* NSTimer+Control.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Control.m"; sourceTree = "<group>"; };
+		A7B29D7F18D8F16300811500 /* SpritzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpritzViewController.h; sourceTree = "<group>"; };
+		A7B29D8018D8F16300811500 /* SpritzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpritzViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,7 @@
 				A77AC18718C2360C006368E7 /* CoreGraphics.framework in Frameworks */,
 				A77AC18918C2360C006368E7 /* UIKit.framework in Frameworks */,
 				A77AC18518C2360C006368E7 /* Foundation.framework in Frameworks */,
+				D07A573853A1447E9DDF9AC6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,7 @@
 				A77AC1A918C2360C006368E7 /* AFSpritz-DemoTests */,
 				A77AC18318C2360C006368E7 /* Frameworks */,
 				A77AC18218C2360C006368E7 /* Products */,
+				121B0F5E08E04C188CF1F26A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +132,7 @@
 				A77AC18618C2360C006368E7 /* CoreGraphics.framework */,
 				A77AC18818C2360C006368E7 /* UIKit.framework */,
 				A77AC1A318C2360C006368E7 /* XCTest.framework */,
+				53DF1E28854945BD97712B7C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,6 +145,8 @@
 				A77AC19618C2360C006368E7 /* Main.storyboard */,
 				A77AC19918C2360C006368E7 /* ViewController.h */,
 				A77AC19A18C2360C006368E7 /* ViewController.m */,
+				A7B29D7F18D8F16300811500 /* SpritzViewController.h */,
+				A7B29D8018D8F16300811500 /* SpritzViewController.m */,
 				A77AC1BC18C2364C006368E7 /* AFSpritz */,
 				A77AC19C18C2360C006368E7 /* Images.xcassets */,
 				A77AC18B18C2360C006368E7 /* Supporting Files */,
@@ -180,6 +194,8 @@
 				A75590CE18C23BFF003D7763 /* AFSpritzLabel.m */,
 				A77A366918D618F900B2865F /* NSTimer+Blocks.h */,
 				A77A366A18D618F900B2865F /* NSTimer+Blocks.m */,
+				A7ACFEB618D8EB3400218D68 /* NSTimer+Control.h */,
+				A7ACFEB718D8EB3400218D68 /* NSTimer+Control.m */,
 			);
 			name = AFSpritz;
 			sourceTree = "<group>";
@@ -191,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A77AC1B318C2360C006368E7 /* Build configuration list for PBXNativeTarget "AFSpritz-Demo" */;
 			buildPhases = (
+				B0987A504FCF41E2BC730F6A /* Check Pods Manifest.lock */,
 				A77AC17D18C2360C006368E7 /* Sources */,
 				A77AC17E18C2360C006368E7 /* Frameworks */,
 				A77AC17F18C2360C006368E7 /* Resources */,
+				42838B07B0C049E0BFE2B50F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,6 +294,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42838B07B0C049E0BFE2B50F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0987A504FCF41E2BC730F6A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A77AC17D18C2360C006368E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -283,11 +334,13 @@
 			files = (
 				A77AC19B18C2360C006368E7 /* ViewController.m in Sources */,
 				A77AC19518C2360C006368E7 /* AppDelegate.m in Sources */,
+				A7ACFEB818D8EB3400218D68 /* NSTimer+Control.m in Sources */,
 				A75590CF18C23BFF003D7763 /* AFSpritzLabel.m in Sources */,
 				A77AC1BF18C2365E006368E7 /* AFSpritzWords.m in Sources */,
 				A77AC1BB18C2363E006368E7 /* AFSpritzManager.m in Sources */,
 				A77AC19118C2360C006368E7 /* main.m in Sources */,
 				A77A366B18D618F900B2865F /* NSTimer+Blocks.m in Sources */,
+				A7B29D8118D8F16300811500 /* SpritzViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +464,7 @@
 		};
 		A77AC1B418C2360C006368E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 121B0F5E08E04C188CF1F26A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -424,6 +478,7 @@
 		};
 		A77AC1B518C2360C006368E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 121B0F5E08E04C188CF1F26A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

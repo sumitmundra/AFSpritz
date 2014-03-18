@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F6312196-45E5-4E35-8D55-6EC7A72A7EB4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AFSpritz-Demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C7243FB3-B4CD-4E1C-A43C-8291D4B9171D</key>
+		<string>https://github.com/AlvaroFranco/AFSpritz.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Demo/AFSpritz-Demo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C7243FB3-B4CD-4E1C-A43C-8291D4B9171D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AlvaroFranco/AFSpritz.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C7243FB3-B4CD-4E1C-A43C-8291D4B9171D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7243FB3-B4CD-4E1C-A43C-8291D4B9171D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AFSpritz</string>
+		</dict>
+	</array>
+</dict>
+</plist>

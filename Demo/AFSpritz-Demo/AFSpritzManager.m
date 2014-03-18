@@ -19,8 +19,8 @@
 
 @property (nonatomic) int status;
 
-@property (nonatomic, strong) NSDate *pauseDate;
-@property (nonatomic, strong) NSDate *previousFireDate;
+@property (nonatomic) NSTimeInterval *pauseTimeInterval;
+@property (nonatomic, strong) NSDate *startDate;
 
 -(NSMutableArray *)packageOfWords;
 
@@ -70,14 +70,13 @@
             if (_current > 0) {
                 
                 if ([self containsFullStop:[(AFSpritzWords *)wordsArray[_current - 1]word]]) {
+                    
                     clock_t end = clock() + (_speed/2 * CLOCKS_PER_SEC);
                     while (clock() < end)
                         ;
                 }
             }
-            
-            NSLog(@"%@",[(AFSpritzWords *)wordsArray[_current]word]);
-            
+                        
             _status = AFSpritzStatusReading;
 
             completion([wordsArray objectAtIndex:_current], NO);
@@ -98,6 +97,18 @@
         return YES;
     } else if ([wordToAnalyze rangeOfString:@"! "].location != NSNotFound) {
         return YES;
+    } else if ([wordToAnalyze rangeOfString:@", "].location != NSNotFound) {
+        return YES;
+    } else if ([wordToAnalyze rangeOfString:@"... "].location != NSNotFound) {
+        return YES;
+    } else if ([wordToAnalyze rangeOfString:@"… "].location != NSNotFound) {
+        return YES;
+    } else if ([wordToAnalyze rangeOfString:@"? "].location != NSNotFound) {
+        return YES;
+    } else if ([wordToAnalyze rangeOfString:@": "].location != NSNotFound) {
+        return YES;
+    } else if ([wordToAnalyze rangeOfString:@"! "].location != NSNotFound) {
+        return YES;
     } else {
         return NO;
     }
@@ -112,6 +123,22 @@
     }
         
     return tempArray;
+}
+
+-(void)resumeReading {
+    
+    if ([self status:AFSpritzStatusStopped]) {
+        _status = AFSpritzStatusReading;
+        [_timer resumeTimer];
+    }
+}
+
+-(void)pauseReading {
+    
+    if ([self status:AFSpritzStatusReading]) {
+        _status = AFSpritzStatusStopped;
+        [_timer pauseTimer];
+    }
 }
 
 -(BOOL)status:(AFSpritzStatus)spritzStatus {

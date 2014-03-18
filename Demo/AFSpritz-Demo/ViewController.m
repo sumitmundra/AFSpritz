@@ -7,13 +7,15 @@
 //
 
 #import "ViewController.h"
-#import "AFSpritzManager.h"
-#import <objc/message.h>
+#import "SpritzViewController.h"
+#import "AFPopupView.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) UIButton *restartButton;
-@property (nonatomic, strong) AFSpritzManager *manager;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UIButton *showSpritzButton;
+@property (nonatomic, strong) AFPopupView *popup;
+@property (nonatomic, strong) SpritzViewController *spritzVC;
 
 @end
 
@@ -22,34 +24,33 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    _restartButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 180, 100, 50)];
-    [_restartButton setTitle:@"Start" forState:UIControlStateNormal];
-    [_restartButton addTarget:self action:@selector(toggleSpritz) forControlEvents:UIControlEventTouchUpInside];
-    _restartButton.titleLabel.textColor = [UIColor blackColor];
-    [self.view addSubview:_restartButton];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:Nil];
+    _spritzVC = [storyboard instantiateViewControllerWithIdentifier:@"SpritzVC"];
+
+    [_showSpritzButton addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
     
-    [self toggleSpritz];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(hide) name:@"HideSpritzPopup" object:nil];
+}
+
+-(void)show {
+    
+    _spritzVC.text = _textView.text;
+    _popup = [AFPopupView popupWithView:_spritzVC.view];
+    [_popup show];
+}
+
+-(void)hide {
+    
+    [_popup hide];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [_textView resignFirstResponder];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-}
-
--(void)toggleSpritz {
-    AFSpritzManager *manager = [[AFSpritzManager alloc]initWithText:@"Welcome to AFSpritz! Spritz is a brand new revolutionary reading method that will help you to improve your number of words per minute. Take a look at AFSpritz!" andWordsPerMinute:550];
-    
-    [manager updateLabelWithNewWordAndCompletion:^(AFSpritzWords *word, BOOL finished) {
-       
-        if (!finished) {
-                        
-            AFSpritzLabel *spritzLabel = [[AFSpritzLabel alloc]initWithFrame:CGRectMake(20, 20, 200, 40)];
-            spritzLabel.center = CGPointMake([[UIScreen mainScreen]bounds].size.width / 2, 100);
-            spritzLabel.word = word;
-            [self.view addSubview:spritzLabel];
-        } else {
-            NSLog(@"Finished!");
-        }
-    }];
 }
 
 -(void)didReceiveMemoryWarning {
