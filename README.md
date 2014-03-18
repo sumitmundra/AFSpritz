@@ -66,6 +66,15 @@ Example:
 	
 NOTE: *AFSpritzStatusStopped* is totally useless at the moment. It will be enabled in future versions where this feature (and more!) will be added.
 
+###Pausing and resuming
+
+Now you can pause and resume your reading just calling these two methods:
+
+	[manager pauseReading];
+
+	[manager resumeReading];
+	
+
 ##AFSpritzLabel API
 
 AFSpritzLabel is an incredible, well crafted and 100% AFSpritzWords-compatible UIView subclass that will let you show your Spritz reading.
@@ -83,11 +92,11 @@ You can customize many properties from AFSpritzLabel, such as:
 
 ##Wishlist
 
-1. ~~Customize speed throught the number of words per minute.~~
+1. ~~Customize speed throught the number of words per minute.~~ 
 
-2. Add a little stop when there's a stop on the text (. … : , ! ?).
+2. ~~Stop and resume the reading~~.
 
-3. Stop and resume the reading.
+3. Add a little stop when there's a stop on the text (. … : , ! ?).
 
 4. Restart the reading.
 
