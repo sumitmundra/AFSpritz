@@ -28,7 +28,7 @@ First of all, import AFSpritzManager.h to your class
 
     #import "AFSpritzManager.h"
 
-Initialise AFSpritzManager assigning a text and a number of words per minute, that will determine the speed of the reading. Theorically, there's no limit, but the more confortable speed is 200-250 words per minute. However, Spritz is made for let you read more than 500 words per minute.
+Initialise ```AFSpritzManager``` assigning a text and a number of words per minute, that will determine the speed of the reading. Theorically, there's no limit, but the more confortable speed is 200-250 words per minute. However, Spritz is made for let you read more than 500 words per minute.
 
     AFSpritzManager *manager = [[AFSpritzManager alloc]initWithText:@"Welcome to AFSpritz! Spritz is a brand new revolutionary reading method that will help you to improve your number of words per minute. Take a look at AFSpritz!" andWordsPerMinute:250];
 
@@ -44,6 +44,27 @@ Then, call the block that will update the Spritz label
             NSLog(@"Finished!");
         }
     }];
+	
+###Checking the status
+
+	typedef NS_ENUM(int, AFSpritzStatus) {
+    	AFSpritzStatusStopped,
+    	AFSpritzStatusReading,
+    	AFSpritzStatusNotStarted,
+    	AFSpritzStatusFinished
+	};
+
+AFSpritz has the feature of checking in each moment the status of the reading using ```-status:```.
+
+Example:
+
+	if ([manager status:AFSpritzStatusReading]) {
+		// The current status is reading
+	} else if ([manager status:AFSpritzStatusNotStarted]) {
+		// The current status is not started yet
+	}
+	
+NOTE: *AFSpritzStatusStopped* is totally useless at the moment. It will be enabled in future versions where this feature (and more!) will be added.
 
 ##AFSpritzLabel API
 
