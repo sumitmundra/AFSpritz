@@ -35,16 +35,16 @@ Initialise AFSpritzManager assigning a text and a number of words per minute, th
 Then, call the block that will update the Spritz label
 
     [manager updateLabelWithNewWordAndCompletion:^(AFSpritzWords *word, BOOL finished) {
-       
+
         if (!finished) {
-            
+
 			//Update the AFSpritzLabel
-			
+
         } else {
             NSLog(@"Finished!");
         }
     }];
-    
+
 ##AFSpritzLabel API
 
 AFSpritzLabel is an incredible, well crafted and 100% AFSpritzWords-compatible UIView subclass that will let you show your Spritz reading.
@@ -65,6 +65,10 @@ You can customize many properties from AFSpritzLabel, such as:
 1. ~~Customize speed throught the number of words per minute.~~
 
 2. Add a little stop when there's a stop on the text (. … : , ! ?).
+
+3. Stop and resume the reading.
+
+4. Restart the reading.
 
 ##Author
 
