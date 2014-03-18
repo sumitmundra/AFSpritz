@@ -9,7 +9,7 @@ A complete Spritz SDK for iOS
 
 AFSpritz is on [CocoaPods](http://cocoapods.org), so you can get the pod by adding this line to your Podfile
 
-    pod 'AFSpritz', '~> 1.2'
+    pod 'AFSpritz', '~> 1.3'
 
 If not, just import these files to your project:
 
@@ -21,6 +21,8 @@ If not, just import these files to your project:
     AFSpritzLabel.m
     NSTimer+Blocks.h
     NSTimer+Blocks.m
+    NSTimer+Control.h
+    NSTimer+Control.m
 
 ##Usage
 
