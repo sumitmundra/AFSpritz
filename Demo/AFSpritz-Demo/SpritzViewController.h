@@ -11,5 +11,6 @@
 @interface SpritzViewController : UIViewController
 
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic) int wpm;
 
 @end

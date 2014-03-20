@@ -22,15 +22,6 @@
 
 @implementation SpritzViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -40,10 +31,10 @@
     [self.view addSubview:spritzLabel];
 
     self.view.backgroundColor = [UIColor clearColor];
-    UIToolbar *blurbar = [[UIToolbar alloc] initWithFrame:self.view.frame];
-    blurbar.barStyle = UIBarStyleDefault;
-    [self.view addSubview:blurbar];
-    [self.view sendSubviewToBack:blurbar];
+    UIToolbar *blurBar = [[UIToolbar alloc] initWithFrame:self.view.frame];
+    blurBar.barStyle = UIBarStyleDefault;
+    [self.view addSubview:blurBar];
+    [self.view sendSubviewToBack:blurBar];
     
     [_startButton addTarget:self action:@selector(toggleSpritz) forControlEvents:UIControlEventTouchUpInside];
     [_closeButton addTarget:self action:@selector(closePopup) forControlEvents:UIControlEventTouchUpInside];
@@ -55,7 +46,8 @@
 }
 
 -(void)toggleSpritz {
-    _manager = [[AFSpritzManager alloc]initWithText:_text andWordsPerMinute:250];
+    
+    _manager = [[AFSpritzManager alloc]initWithText:_text andWordsPerMinute:_wpm ? _wpm : 250];
     
     [_manager updateLabelWithNewWordAndCompletion:^(AFSpritzWords *word, BOOL finished) {
         
@@ -74,8 +66,7 @@
     [_resumeButton addTarget:_manager action:@selector(resumeReading) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

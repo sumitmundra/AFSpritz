@@ -41,7 +41,7 @@
         _text = text;
         _speed = (wpm / 60);
         _speed = (1/_speed);
-
+        
         NSArray *wordsSeparated = [self.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         NSMutableArray *fixedArray = [NSMutableArray array];
@@ -71,7 +71,7 @@
                 
                 if ([self containsFullStop:[(AFSpritzWords *)wordsArray[_current - 1]word]]) {
                     
-                    clock_t end = clock() + (_speed/2 * CLOCKS_PER_SEC);
+                    clock_t end = clock() + (_speed * CLOCKS_PER_SEC);
                     while (clock() < end)
                         ;
                 }
