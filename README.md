@@ -64,9 +64,11 @@ Example:
 		// The current status is reading
 	} else if ([manager status:AFSpritzStatusNotStarted]) {
 		// The current status is not started yet
+	}  else if ([manager AFSpritzStatusStopped]) {
+		// The current status is stopped, so it can be resumed
+	} else if ([manager AFSpritzStatusFinished]) {
+		// The current status is finished
 	}
-	
-NOTE: *AFSpritzStatusStopped* is totally useless at the moment. It will be enabled in future versions where this feature (and more!) will be added.
 
 ###Pausing and resuming
 
@@ -98,7 +100,7 @@ You can customize many properties from AFSpritzLabel, such as:
 
 2. ~~Stop and resume the reading~~.
 
-3. Add a little stop when there's a stop on the text (. … : , ! ?).
+3. ~~Add a little stop when there's a stop on the text (. … : , ! ?).~~
 
 4. Restart the reading.
 
