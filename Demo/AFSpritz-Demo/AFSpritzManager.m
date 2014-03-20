@@ -19,9 +19,6 @@
 
 @property (nonatomic) int status;
 
-@property (nonatomic) NSTimeInterval *pauseTimeInterval;
-@property (nonatomic, strong) NSDate *startDate;
-
 -(NSMutableArray *)packageOfWords;
 
 -(BOOL)containsFullStop:(NSString *)wordToAnalyze;
@@ -35,6 +32,11 @@
     self = [super init];
     
     if (self) {
+        
+        if (!wpm) {
+            wpm = 250;
+            NSLog(@"AFSpritz message: You need to provide a valid number of words per minute. If not, 250 words per minute will be used by default");
+        }
         
         _status = AFSpritzStatusNotStarted;
         
@@ -107,7 +109,7 @@
         return YES;
     } else if ([wordToAnalyze rangeOfString:@": "].location != NSNotFound) {
         return YES;
-    } else if ([wordToAnalyze rangeOfString:@"! "].location != NSNotFound) {
+    } else if ([wordToAnalyze rangeOfString:@"; "].location != NSNotFound) {
         return YES;
     } else {
         return NO;
@@ -130,6 +132,8 @@
     if ([self status:AFSpritzStatusStopped]) {
         _status = AFSpritzStatusReading;
         [_timer resumeTimer];
+    } else {
+        NSLog(@"AFSpritz message: Reading can only be resumed when is stopped");
     }
 }
 
@@ -138,6 +142,8 @@
     if ([self status:AFSpritzStatusReading]) {
         _status = AFSpritzStatusStopped;
         [_timer pauseTimer];
+    } else {
+        NSLog(@"AFSpritz message: Reading can only be paused when the reading is active");
     }
 }
 
