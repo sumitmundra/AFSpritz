@@ -41,7 +41,7 @@
         _text = text;
         _speed = (wpm / 60);
         _speed = (1/_speed);
-
+        
         NSArray *wordsSeparated = [self.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         NSMutableArray *fixedArray = [NSMutableArray array];
@@ -71,14 +71,14 @@
                 
                 if ([self containsFullStop:[(AFSpritzWords *)wordsArray[_current - 1]word]]) {
                     
-                    clock_t end = clock() + (_speed/2 * CLOCKS_PER_SEC);
+                    clock_t end = clock() + (_speed * CLOCKS_PER_SEC);
                     while (clock() < end)
                         ;
                 }
             }
-                        
+            
             _status = AFSpritzStatusReading;
-
+            
             completion([wordsArray objectAtIndex:_current], NO);
             _current++;
         } else if (_current == wordsArray.count) {
@@ -121,7 +121,7 @@
     for (NSString *word in _words) {
         [tempArray addObject:[[AFSpritzWords alloc]initWithNextWord:word]];
     }
-        
+    
     return tempArray;
 }
 
@@ -142,7 +142,7 @@
 }
 
 -(BOOL)status:(AFSpritzStatus)spritzStatus {
-
+    
     if (spritzStatus == _status) {
         return YES;
     } else {
